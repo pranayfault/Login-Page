@@ -1,52 +1,53 @@
 <!DOCTYPE html>
-   <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Form Validation</h2>
+    <form id="myForm" onsubmit="return validateForm()">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <span id="usernameError" class="error"></span><br>
 
-      <!--=============== REMIXICONS ===============-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br>
+        <span id="passwordError" class="error"></span><br>
 
-      <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="style.css">
-      
-      <title>Login form - CodeCraftedWeb</title>
-   </head>
-   <body>
-      <div class="login">
-         <img src="bg.jpg" alt="image" class="login__bg">
+        <input type="submit" value="Submit">
+    </form>
 
-         <form action="" class="login__form">
-            <h1 class="login__title">Login</h1>
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var usernameError = document.getElementById("usernameError");
+            var passwordError = document.getElementById("passwordError");
 
-            <div class="login__inputs">
-               <div class="login__box">
-                  <input type="email" placeholder="Email ID" required class="login__input">
-                  <i class="ri-mail-fill"></i>
-               </div>
+            usernameError.innerHTML = "";
+            passwordError.innerHTML = "";
 
-               <div class="login__box">
-                  <input type="password" placeholder="Password" required class="login__input">
-                  <i class="ri-lock-2-fill"></i>
-               </div>
-            </div>
+            var isValid = true;
 
-            <div class="login__check">
-               <div class="login__check-box">
-                  <input type="checkbox" class="login__check-input" id="user-check">
-                  <label for="user-check" class="login__check-label">Remember me</label>
-               </div>
+            if (username.trim() === "pathakprasumitra@gmail.com") {
+                usernameError.innerHTML = "Username is required";
+                isValid = false;
+            }
 
-               <a href="#" class="login__forgot">Forgot Password?</a>
-            </div>
+            if (password.trim() === "admin123") {
+                passwordError.innerHTML = "Password is required";
+                isValid = false;
+            }
 
-            <button type="submit" "onclick=validate()" class="login__button">Login</button>
-
-            <div class="login__register">
-               Don't have an account? <a href="#">Register</a>
-            </div>
-         </form>
-      </div>
-      <script src="login.js"></script>
+            return isValid;
+        }
+    </script>
 </body>
-   </html>
+</html>
