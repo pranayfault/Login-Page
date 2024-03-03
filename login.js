@@ -2,4 +2,8 @@
 <html>
    <head>
       <script>
-           function veld
+           function validate() {
+              window.open("https://github.com")
+   
+           }
+     </script>
