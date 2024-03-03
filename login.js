@@ -5,9 +5,12 @@ function validate()
                if(email== "pathakprasumitra@gmail.com" && password=="Pranay123")
                {
                    
-                   alert ("login successfully ");
+                   alert ("login successfully");
+                   return false;
+
+              
                }
                else{
-                   alert ("badk land lala mera🤡 ");
+                   alert ("🤡");
                    return;
                } 
