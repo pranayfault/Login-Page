@@ -1,13 +1,21 @@
-<!DOCTYPE HTML>
-<html>
-   <head>
-      <script>
-    // Function to redirect to the target website
-    function validate() {
-        // Replace the URL below with the website you want to redirect to
-        window.location.href = "https://example.com";
-    }
+function validate()
+               {
+               var email = document.getElementById("email"). value;
+               var password = document.getElementById("password"). value;
+               if(email== "pathakprasumitra@gmail.com" && password=="Pranay123")
+               window.location.replace("https://github.com");
+               {
+                   
+                   alert ("login successfully");
+                   return false;
 
-    // Automatic redirection after 5 seconds (adjust as needed)
-    setTimeout(redirectToWebsite, 1000);
-</script>
+              
+               }
+               else{
+                   alert ("🤡");
+                   return;
+               } 
+
+      </script>
+   </body>
+      </html>
